@@ -1,34 +1,51 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
+import Context from "../context/Context"
 import { Link } from 'react-router-dom' 
 
 const Chronometer = () => {
-  const {time, setTime } = useState();
+  const {
+    time,
+    setTime,
+    paused,
+    setPaused,
+    interval,
+     setInterval
+   } = useContext(Context);
 
   
-  const counter = setInterval(() => {
-    if (time > 0) {
-      setTime(time -1);
-    }
-    if (time === 0) {
-      clearInterval(counter);
-    }
-  },1000)
 
-  const turnOff = () => {
-    setTime(25);
+
+  useEffect(() => {
+    const counter = setInterval(() => {
+      if(paused || time > 0){
+        setTime(prevCounter => prevCounter -1);
+      }
+    }, 1000);
+ 
+    return () => clearInterval(counter);
+  });
+  
+  const reset = () => {
+      setTime(25);
+    }
+
+  const pause = () => {
+    setPaused(!paused);
   }
-  
-  useEffect(counter)
+    
+    
 
   return (
     <div>
+      <h1>Cronometro</h1>
       <div>
         {time === 0 
           ? <h1>FIM!</h1>
-          : <h1>Tempo Restante {time} seconds </h1>
+          : <h1>Tempo de Atividade: {time} seconds </h1>
         }
         </div>
-        <Link to="/" onClick={ turnOff }>Desligar cronômetro</Link>
+        <button onClick={ reset }>Resetar</button>
+        <button onClick={pause}>Pausar</button>
     </div>
   )
 }
