@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
           <Switch>
             <section className="App-header">
-             <Route exact path="/" render={ () => <Home setTimeMinutes={ this.setTimeMinutes } setTimeSeconds={ this.setTimeSeconds}/> } />
-             <Route path="/chronometer" render = { () => <Chronometer minutes={ minutes } seconds={ seconds } turnOff={ this.turnOff }/> } />
+             <Route exact path="/" component={Home} />
+             <Route path="/chronometer"  component={Chronometer}/>
             </section>
           </Switch>
         </BrowserRouter>
