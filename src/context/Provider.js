@@ -3,7 +3,7 @@ import Context from './Context';
 
 function Provider({ children }) {
 
-  const [time, setTime] = useState(4);
+  const [time, setTime] = useState(25);
   const [paused, setPaused] = useState(false);
   const [intervalTime, setIntervalTime] = useState(5);
   const [secondInput, setSecondInput] = useState(25);
