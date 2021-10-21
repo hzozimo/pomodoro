@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import Context from "../context/Context"
-import { Link } from 'react-router-dom' 
+import EndsActivity from '../components/EndsActivity.js'
+import ActivityTime from '../components/ActivityTime.js'
 
 const Chronometer = () => {
   const {
@@ -8,44 +9,53 @@ const Chronometer = () => {
     setTime,
     paused,
     setPaused,
-    interval,
-     setInterval
+    intervalTime,
+    setIntervalTime,
+    secondInput,
+    setSecondInput,
    } = useContext(Context);
-
-  
-
 
   useEffect(() => {
     const counter = setInterval(() => {
-      if(paused || time > 0){
-        setTime(prevCounter => prevCounter -1);
+      if(!paused && time > 0){
+        setTime(prevTime => prevTime -1);
+      }
+      if(!paused && time === 0 && intervalTime > 0){
+        setIntervalTime(prevIntervalTime => prevIntervalTime -1);
       }
     }, 1000);
- 
-    return () => clearInterval(counter);
+    return () => {clearInterval(counter);};
   });
   
   const reset = () => {
       setTime(25);
+      setPaused(false);
     }
 
   const pause = () => {
-    setPaused(!paused);
+    setPaused(prevPaused => !prevPaused);
   }
-    
-    
 
   return (
     <div>
       <h1>Cronometro</h1>
       <div>
         {time === 0 
-          ? <h1>FIM!</h1>
-          : <h1>Tempo de Atividade: {time} seconds </h1>
+          ? <EndsActivity />
+          : <h1>Tempo de Atividade: {time} segundos </h1>
         }
+        </div>
+        <div>
+          {time === 0 
+          && (<h1>tempo de intervalo: {intervalTime} segundos</h1>)}
         </div>
         <button onClick={ reset }>Resetar</button>
         <button onClick={pause}>Pausar</button>
+        <label htmlFor='seconds'>
+        <input type='number' name='seconds' placeholder="Segundos" onChange={ (e)=> setSecondInput(e.target.value) }/>
+        </label>
+        <button onClick={() => setTime(secondInput)}>Novo tempo de atividade</button>
+
     </div>
   )
 }

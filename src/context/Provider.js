@@ -3,9 +3,10 @@ import Context from './Context';
 
 function Provider({ children }) {
 
-  const [time, setTime] = useState(25);
+  const [time, setTime] = useState(4);
   const [paused, setPaused] = useState(false);
-  const [interval, setInterval] = useState(5);
+  const [intervalTime, setIntervalTime] = useState(5);
+  const [secondInput, setSecondInput] = useState(25);
 
 
   const state = {
@@ -13,8 +14,10 @@ function Provider({ children }) {
     setTime,
     paused,
     setPaused,
-    interval, 
-    setInterval
+    intervalTime, 
+    setIntervalTime,
+    secondInput,
+    setSecondInput,
   };
 
   return (
