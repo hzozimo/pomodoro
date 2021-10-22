@@ -5,6 +5,7 @@ const ProgressBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px;
 `;
 
 const ProgressContainer = styled.div`
@@ -13,15 +14,16 @@ const ProgressContainer = styled.div`
   height: 10px;
   border-radius: 5px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  background-color:darkred;
 `;
 
 const Progress = styled.div`
   height: 100%;
   border-radius: 5px;
-  background: #03a2ca;
-  box-shadow: 0 0 0.75em #03a2ca;
+  background: green;
+  box-shadow: 0 0 0.75em green;
 `;
 
 export {

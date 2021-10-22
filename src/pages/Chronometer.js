@@ -1,7 +1,9 @@
 import React, {useContext, useEffect} from 'react';
-import Context from "../context/Context"
-import EndsActivity from '../components/EndsActivity.js'
-import ActivityTime from '../components/ActivityTime.js'
+import Context from "../context/Context";
+import EndsActivity from '../components/EndsActivity.js';
+import ActivityTime from '../components/ActivityTime.js';
+import './pages.css';
+import pomodoro from '../assets/pomodoro.png';
 
 const Chronometer = () => {
   const {
@@ -37,13 +39,16 @@ const Chronometer = () => {
   }
 
   return (
-    <div>
-      <h1>Cronometro</h1>
+    <div className='pomodoro-container'>
+      <h1>Cronometro - Técnica Pomodoro</h1>
+      <div className='img-container'>
+        <img className='pomodoro-img' src= {pomodoro} alt='pomodoro'/>
+      </div>
       <div>
         {time === 0 
           ? <EndsActivity />
           : (
-          <div>
+          <div className='activity-container'>
             <h1>Tempo de atividade: {time} segundos </h1>
             <ActivityTime progress={ time } />
           </div>
@@ -54,12 +59,14 @@ const Chronometer = () => {
           {time === 0 
           && (<h2>Tempo de intervalo: {intervalTime} segundos</h2>)}
         </div>
-        <button onClick={ reset }>Resetar</button>
-        <button onClick={pause}>Pausar</button>
-        <label htmlFor='seconds'>
-        <input type='number' name='seconds' placeholder="Segundos" onChange={ (e)=> setSecondInput(e.target.value) }/>
-        </label>
-        <button onClick={() => setTime(secondInput)}>Novo tempo de atividade</button>
+        <div className='input-container'>
+          <button onClick={ reset }>Resetar</button>
+          <button onClick={pause}>Pausar</button>
+          <label htmlFor='seconds'>
+          <input type='number' name='seconds' placeholder="Segundos" onChange={ (e)=> setSecondInput(e.target.value) }/>
+          </label>
+          <button onClick={() => setTime(secondInput)}>Novo tempo de atividade</button>
+        </div>
 
     </div>
   )
