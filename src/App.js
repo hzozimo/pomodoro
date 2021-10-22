@@ -6,8 +6,8 @@ import Home from './pages/Home'
 function App() {
   return (
       <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/chronometer"  component={Chronometer}/>
+          <Route exact path="/pomodoro" component={Home} />
+          <Route path="/pomodoro/chronometer"  component={Chronometer}/>
       </Switch>
   );
 }

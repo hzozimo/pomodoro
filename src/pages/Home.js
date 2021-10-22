@@ -20,7 +20,7 @@ const Home = () => {
         estarão em segundos e não em minutos. Ou seja, os 25 minutos de duração
         serão 25 segundos e os 5 minutos de intervalo serão 5 segundos.
       </p>
-        <Link to="/chronometer">Ligar cronômetro</Link>
+        <Link to="/pomodoro/chronometer">Ligar cronômetro</Link>
     </div>
   )
 }
