@@ -8,7 +8,6 @@ function Provider({ children }) {
   const [intervalTime, setIntervalTime] = useState(5);
   const [secondInput, setSecondInput] = useState(25);
 
-
   const state = {
     time,
     setTime,

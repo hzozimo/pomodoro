@@ -67,7 +67,6 @@ const Chronometer = () => {
           </label>
           <button onClick={() => setTime(secondInput)}>Novo tempo de atividade</button>
         </div>
-
     </div>
   )
 }
