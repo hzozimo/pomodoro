@@ -42,7 +42,12 @@ const Chronometer = () => {
       <div>
         {time === 0 
           ? <EndsActivity />
-          : <h1>Tempo de Atividade: {time} segundos </h1>
+          : (
+          <div>
+            <h1>Tempo de Atividade: {time} segundos </h1>
+            <ActivityTime progress={ time } />
+          </div>
+          )
         }
         </div>
         <div>
