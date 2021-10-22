@@ -12,8 +12,7 @@ const Home = () => {
       </p>
       <br/>
       <p> 
-        A <a href='https://brasilescola.uol.com.br/dicas-de-estudo/tecnica-pomodoro-que-e-e-como-funciona.htm' target='_blank' rel="noreferrer">Técnica Pomodoro</a> 
-        é um método de gerenciamento de tempo desenvolvido por
+        A <a href='https://brasilescola.uol.com.br/dicas-de-estudo/tecnica-pomodoro-que-e-e-como-funciona.htm' target='_blank' rel="noreferrer">Técnica Pomodoro</a> é um método de gerenciamento de tempo desenvolvido por
         Francesco Cirillo no final dos anos 1980. A técnica usa um cronômetro para dividir o
         trabalho em intervalos, tradicionalmente de 25 minutos de duração, separados por
         intervalos curtos - 5 minutos.
