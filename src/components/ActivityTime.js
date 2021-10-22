@@ -3,7 +3,6 @@ import {
   Progress,
   ProgressBarContainer,
   ProgressContainer,
-  ProgressDescription,
 } from './style';
 
 
@@ -13,8 +12,6 @@ const ActivityTime = ({ progress }) => {
       <ProgressContainer>
         <Progress style={{ width: `${progress}%` }}></Progress>
       </ProgressContainer>
-
-      <ProgressDescription>{progress.toFixed(2)}%</ProgressDescription>
     </ProgressBarContainer>
   );
 };

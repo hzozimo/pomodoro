@@ -9,7 +9,7 @@ const EndsActivity = () => {
  },[])
 
   return(
-    <h1>Fim da Atividade! Hora do Intervalo!</h1>
+    <h2>Fim da Atividade! Hora do Intervalo!</h2>
   )
 }
 

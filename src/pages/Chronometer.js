@@ -44,7 +44,7 @@ const Chronometer = () => {
           ? <EndsActivity />
           : (
           <div>
-            <h1>Tempo de Atividade: {time} segundos </h1>
+            <h1>Tempo de atividade: {time} segundos </h1>
             <ActivityTime progress={ time } />
           </div>
           )
@@ -52,7 +52,7 @@ const Chronometer = () => {
         </div>
         <div>
           {time === 0 
-          && (<h1>tempo de intervalo: {intervalTime} segundos</h1>)}
+          && (<h2>Tempo de intervalo: {intervalTime} segundos</h2>)}
         </div>
         <button onClick={ reset }>Resetar</button>
         <button onClick={pause}>Pausar</button>
