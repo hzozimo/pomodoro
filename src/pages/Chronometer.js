@@ -25,6 +25,10 @@ const Chronometer = () => {
       if(!paused && time === 0 && intervalTime > 0){
         setIntervalTime(prevIntervalTime => prevIntervalTime -1);
       }
+      if(!paused && time === 0 && intervalTime === 0){
+        setTime(secondInput);
+      }
+
     }, 1000);
     return () => {clearInterval(counter);};
   });
