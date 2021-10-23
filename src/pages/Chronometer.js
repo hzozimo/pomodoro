@@ -42,6 +42,13 @@ const Chronometer = () => {
     setPaused(prevPaused => !prevPaused);
   }
 
+  const newTime = () => {
+    const newIntervalTime = Math.floor(secondInput / 5) ;
+    setTime(secondInput);
+    setIntervalTime(newIntervalTime);
+
+  }
+
   return (
     <div className='pomodoro-container'>
       <h1>Cronometro - Técnica Pomodoro</h1>
@@ -69,7 +76,7 @@ const Chronometer = () => {
           <label htmlFor='seconds'>
           <input type='number' name='seconds' placeholder="Segundos" onChange={ (e)=> setSecondInput(e.target.value) }/>
           </label>
-          <button onClick={() => setTime(secondInput)}>Novo tempo de atividade</button>
+          <button onClick={() => newTime()}>Novo tempo de atividade</button>
         </div>
     </div>
   )
